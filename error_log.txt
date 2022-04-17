@@ -1,0 +1,13 @@
+やりたいこと：djangoのプロジェクトを作成する。
+やったこと：ターミナルで「django-admin startproject ~」とコマンドを打つ
+エラー内容：「zsh: command not found: django-admin」とログが出た
+原因：django-admin というファイルに PATH が通っていないこと
+解決方法：①「python3 -m django startproject 〜」を実行
+
+　　　　　②(1)「pip upinstall django」でdjangoがインストールされてるpathを確認
+　　　　　　(2)「cd ~/」でホームフォルダに移動
+　　　　　　(3)「touch.zshrc」でzshrcファイルを作成
+　　　　　　(4)「open .zshrc」でzshrcファイルを開き最下部に「export PATH=$PATH:/Users/mizuki/Library/Python/3.8/bin」を記述
+          (5)「sourch .zshrc」を実行
+          (6)djangoのプロジェクトを作りたいフォルダに移動し「django-admiin startproject ~」を実行
+
