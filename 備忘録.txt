@@ -1,0 +1,43 @@
+Djangoプロジェクトには最低1個のアプリが必要
+１．英数字とアンダースコアでアプリ名を決める
+　例）website
+
+２．python3 manage.py startapp [アプリ名]
+　例）python3 manage.py startapp website
+
+３．django_website/settins.pyを編集して[アプリ名]を登録
+　例）settings.py
+         # Application definition
+
+        INSTALLED_APPS = [
+            'django.contrib.admin',
+            'django.contrib.auth',
+            'django.contrib.contenttypes',
+            'django.contrib.sessions',
+            'django.contrib.messages',
+            'django.contrib.staticfiles',
+            'website' ◀ーーーーーーーーーーーーここ
+        ]
+ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+ウェブページの追加の仕方
+(アプリのフォルダ内)
+１．templatesフォルダにウェブページのhtmlファイルを追加（最初はtemplateフォルダが無いので作成）
+
+２．views.pyにhtmlをユーザに返すviewを追加
+
+３．urs.pyでviewとURLを結びつける（最初はurl.pyは無いので作成）
+
+アクセスされたときの一連の流れ
+①ウェブページにアクセス
+②[website名]/urs.pyの中のurlspatternsの中から[アプリ名]/urls.pyに飛ばされる
+③[アプリ名]/urs.pyの中のurlspatternsの中からユーザがアクセスしたviews.pyを呼び出す
+④views.pyからtemplateフォルダの中にあるhtmlファイルを呼び、表示する
+ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+サーバーを起動させるコマンド
+cdコマンドでdjango_websiteフォルダに移動し
+python3 manage.py runserverで起動
+ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
